@@ -30,7 +30,7 @@ public class Obstacle : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("Player") || other.CompareTag("ObjectRemover"))
+        if (other.CompareTag("Player"))
         {
             other.GetComponent<PlayerControler>().health -= damage;
             Instantiate(deathEffect, transform.position, Quaternion.identity);

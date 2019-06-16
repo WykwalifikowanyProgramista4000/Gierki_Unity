@@ -14,15 +14,23 @@ public class PlayerControler : MonoBehaviour
 
     public int health = 3;
 
+    public GameObject bombel_pierd;
+    public float pierdnij_bomblem;
+
+    public float timer1;
+
     // Start is called before the first frame update
     void Start()
     {
         targetPos = new Vector2(transform.position.x, transform.position.y);
+        timer1 = 0;
     }
 
     // Update is called once per frame
     private void Update()
     {
+        timer1 += Time.deltaTime;
+
         if (health <= 0)
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
@@ -32,13 +40,23 @@ public class PlayerControler : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.UpArrow) && transform.position.y < maxHeight)
         {
+            Instantiate(bombel_pierd, transform.position, Quaternion.identity);
             targetPos = new Vector2(transform.position.x, transform.position.y + Yincrement);
             transform.position = targetPos;
+            Instantiate(bombel_pierd, transform.position, Quaternion.identity);
         }
-        else if(Input.GetKeyDown(KeyCode.DownArrow) && transform.position.y > minHeight)
+        else if (Input.GetKeyDown(KeyCode.DownArrow) && transform.position.y > minHeight)
         {
+            Instantiate(bombel_pierd, transform.position, Quaternion.identity);
             targetPos = new Vector2(transform.position.x, transform.position.y - Yincrement);
             transform.position = targetPos;
+            Instantiate(bombel_pierd, transform.position, Quaternion.identity);
+        }
+
+        if(timer1 >= pierdnij_bomblem)
+        {
+            timer1 = 0;
+            Instantiate(bombel_pierd, transform.position, Quaternion.identity);
         }
     }
 }
