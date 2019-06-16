@@ -18,6 +18,8 @@ public class PlayerControler : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        PatrzNaMysz();
+
         if (Input.GetKeyDown(KeyCode.LeftShift))
         {
             speed = run_speed;
@@ -46,5 +48,16 @@ public class PlayerControler : MonoBehaviour
         {
             transform.position = new Vector2(transform.position.x + speed, transform.position.y);
         }
+    }
+
+    public void PatrzNaMysz()
+    {
+        Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+
+        Vector2 direction = new Vector2(
+            mousePosition.x - transform.position.x,
+            mousePosition.y - transform.position.y);
+
+        transform.up = direction;
     }
 }
