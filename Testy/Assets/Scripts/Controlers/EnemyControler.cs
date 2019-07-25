@@ -7,17 +7,19 @@ public class EnemyControler : MonoBehaviour
     public float turnRate;
     public float speed;
 
+    public GameObject player_character;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        //Turn();
+        LookAtPlayer();
+        FollowPlayer();
     }
 
     void Turn()
@@ -30,4 +32,19 @@ public class EnemyControler : MonoBehaviour
     {
         Destroy(gameObject);
     }
+
+    public void LookAtPlayer()
+    {
+        Vector2 direction = new Vector2(
+            player_character.transform.position.x - transform.position.x,
+            player_character.transform.position.y - transform.position.y);
+
+        transform.up = direction;
+    }
+
+    public void FollowPlayer()
+    {
+        transform.Translate(Vector2.up * speed * Time.deltaTime);
+    }
+
 }

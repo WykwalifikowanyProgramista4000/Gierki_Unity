@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Pocisk : MonoBehaviour
+public class Projectile : MonoBehaviour
 {
     private float timer0;
 
-    public float bullet_speed;
+    public float bulletSpeed;
     public float lifespan;
 
     public Rigidbody2D rb;
@@ -23,8 +23,7 @@ public class Pocisk : MonoBehaviour
         UpdateTimers();
 
         //transform.Translate(Vector2.up * bullet_speed * Time.deltaTime);
-        rb.velocity = transform.up * bullet_speed;
-
+        rb.velocity = transform.up * bulletSpeed;
 
         if(timer0 >= lifespan)
         {
@@ -42,12 +41,15 @@ public class Pocisk : MonoBehaviour
         Debug.Log(collision.tag);
         Debug.Log(collision.name);
 
-        EnemyControler enemy = collision.GetComponent<EnemyControler>();
-        if (enemy != null)
+        if (collision.CompareTag("Enemy"))
         {
-            enemy.Die();
-        }
+            EnemyControler enemy = collision.GetComponent<EnemyControler>();
+            if (enemy != null)
+            {
+                enemy.Die();
+            }
 
-        Destroy(gameObject);
+            Destroy(gameObject);
+        }
     }
 }

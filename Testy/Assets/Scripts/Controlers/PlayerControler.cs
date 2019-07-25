@@ -5,30 +5,33 @@ using UnityEngine;
 public class PlayerControler : MonoBehaviour
 {
     private float speed;
-
-    public float run_speed;
-    public float walk_speed;
+    public int health = 3;
+    public float runSpeed = 0.6f;
+    public float walkSpeed = 0.3f;
 
     // Start is called before the first frame update
     void Start()
     {
-        speed = walk_speed;
+        speed = walkSpeed;
     }
 
     // Update is called once per frame
     void Update()
     {
-        PatrzNaMysz();
+        //Player rotation
+        LookAtCoursor();
 
+        //Movement modes
         if (Input.GetKeyDown(KeyCode.LeftShift))
         {
-            speed = run_speed;
+            speed = runSpeed;
         }
         else if (Input.GetKeyUp(KeyCode.LeftShift))
         {
-            speed = walk_speed;
+            speed = walkSpeed;
         }
 
+        //Walking around the map
         if (Input.GetKey(KeyCode.W))
         {
             transform.position = new Vector2(transform.position.x, transform.position.y + speed);
@@ -38,19 +41,17 @@ public class PlayerControler : MonoBehaviour
         {
             transform.position = new Vector2(transform.position.x - speed, transform.position.y);
         }
-
         if (Input.GetKey(KeyCode.S))
         {
             transform.position = new Vector2(transform.position.x, transform.position.y - speed);
         }
-
         if (Input.GetKey(KeyCode.D))
         {
             transform.position = new Vector2(transform.position.x + speed, transform.position.y);
         }
     }
 
-    public void PatrzNaMysz()
+    public void LookAtCoursor()
     {
         Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
@@ -59,5 +60,16 @@ public class PlayerControler : MonoBehaviour
             mousePosition.y - transform.position.y);
 
         transform.up = direction;
+    }
+
+    public void AddAmmo(int quantity)
+    {
+        WeaponControler weapon = gameObject.GetComponentInChildren<WeaponControler>();
+
+        if(weapon != null)
+        {
+            weapon.ammo += quantity/2;
+        }
+        
     }
 }

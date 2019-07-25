@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 5051208798645469609}
   - component: {fileID: 1714515476284313796}
   m_Layer: 0
-  m_Name: pocisk
+  m_Name: Projectile
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -47,7 +47,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18d25967f1082054fbcddb54c4ca5ba1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bullet_speed: 40
+  bulletSpeed: 50
   lifespan: 2
   rb: {fileID: 5051208798645469609}
 --- !u!212 &7816608377796184181
