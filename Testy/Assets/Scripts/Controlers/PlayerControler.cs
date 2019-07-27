@@ -8,6 +8,10 @@ public class PlayerControler : MonoBehaviour
     public int health = 3;
     public float runSpeed = 0.6f;
     public float walkSpeed = 0.3f;
+    public float throwBack;
+
+    public GameObject uiCanvas;
+    public GameObject deathScreen;
 
     // Start is called before the first frame update
     void Start()
@@ -49,6 +53,13 @@ public class PlayerControler : MonoBehaviour
         {
             transform.position = new Vector2(transform.position.x + speed, transform.position.y);
         }
+
+        //Is player dead?
+        if(health <= 0)
+        {
+            health = 0;
+            Die();
+        }
     }
 
     public void LookAtCoursor()
@@ -71,5 +82,16 @@ public class PlayerControler : MonoBehaviour
             weapon.ammo += quantity/2;
         }
         
+    }
+
+    private void Die()
+    {
+        Instantiate(deathScreen, uiCanvas.transform);
+        Destroy(gameObject);
+    }
+
+    public void ThrowBack(Vector2 direction)
+    {
+        gameObject.GetComponent<Rigidbody2D>().velocity = direction * throwBack;
     }
 }

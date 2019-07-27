@@ -17,10 +17,13 @@ public class HealthAmmoDisplay : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        healthText.text =
+        if(player_character != null)
+        {
+            healthText.text =
             "Health :: " + player_character.GetComponent<PlayerControler>().health +
             "\nAmmo :: " + player_character.GetComponentInChildren<WeaponControler>().ammo;
 
-        if (Input.GetKeyDown(KeyCode.Space)) { player_character.GetComponent<PlayerControler>().health--; }
+            if (Input.GetKeyDown(KeyCode.Space)) { player_character.GetComponent<PlayerControler>().health--; }
+        }
     }
 }

@@ -9,16 +9,22 @@ public class CameraMovement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        transform.position = new Vector3(player_character.transform.position.x, 
+        if(player_character != null)
+        {
+            transform.position = new Vector3(player_character.transform.position.x,
                                          player_character.transform.position.y,
                                          transform.position.z);
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
-        transform.position = new Vector3(player_character.transform.position.x,
+        if (player_character != null)
+        {
+            transform.position = new Vector3(player_character.transform.position.x,
                                          player_character.transform.position.y,
                                          transform.position.z);
+        }
     }
 }
