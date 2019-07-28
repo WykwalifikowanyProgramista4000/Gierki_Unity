@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class EnemyControler : MonoBehaviour
 {
+    public float health = 3;
     public float speed;
     public float throwBack;
 
@@ -26,6 +27,17 @@ public class EnemyControler : MonoBehaviour
         }
     }
     
+    public void TakeDamage(float damageTaken)
+    {
+        health -= damageTaken;
+        
+        if(health <= 0)
+        {
+            health = 0;
+            Die();
+        }
+    }
+
     //Death
     public void Die()
     {
@@ -62,10 +74,12 @@ public class EnemyControler : MonoBehaviour
     {
         if(collision.tag == "Player")
         {
+            //Geting the direction vector to the player
             Vector2 direction = new Vector2(
             transform.position.x - player_character.transform.position.x,
             transform.position.y - player_character.transform.position.y);
 
+            //Getting pushed back by and pushing back player on collision
             ThrowBack(direction);
             player_character.GetComponent<PlayerControler>().ThrowBack(direction * -1);
             player_character.GetComponent<PlayerControler>().health--;

@@ -6,6 +6,7 @@ public class Projectile : MonoBehaviour
 {
     private float timer0;
 
+    public float damage;
     public float bulletSpeed;
     public float lifespan;
 
@@ -46,7 +47,7 @@ public class Projectile : MonoBehaviour
             EnemyControler enemy = collision.GetComponent<EnemyControler>();
             if (enemy != null)
             {
-                enemy.Die();
+                enemy.TakeDamage(damage);
             }
 
             Destroy(gameObject);

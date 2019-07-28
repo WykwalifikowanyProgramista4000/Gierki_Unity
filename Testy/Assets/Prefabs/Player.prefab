@@ -94,8 +94,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b6fe14b5089003a45ac75e32049768c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  run_speed: 0.06
-  walk_speed: 0.03
+  health: 3
+  runSpeed: 0.6
+  walkSpeed: 0.3
+  throwBack: 30
+  uiCanvas: {fileID: 0}
+  deathScreen: {fileID: 0}
 --- !u!50 &2828624780445307681
 Rigidbody2D:
   serializedVersion: 4

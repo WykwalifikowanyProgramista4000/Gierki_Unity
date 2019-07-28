@@ -79,9 +79,14 @@ public class PlayerControler : MonoBehaviour
 
         if(weapon != null)
         {
-            weapon.ammo += quantity/2;
+            weapon.ammo += quantity;
         }
         
+    }
+
+    public void AddHealth(int quantity)
+    {
+        health += quantity;
     }
 
     private void Die()
