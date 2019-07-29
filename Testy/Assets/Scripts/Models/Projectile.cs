@@ -7,6 +7,7 @@ public class Projectile : MonoBehaviour
     private float timer0;
 
     public float damage;
+    public float strength = 20;
     public float bulletSpeed;
     public float lifespan;
 
@@ -39,15 +40,19 @@ public class Projectile : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log(collision.tag);
-        Debug.Log(collision.name);
+        Debug.Log("projectile has hit something!" + "\ntag: " + collision.tag + "\tname: " + collision.name);
 
         if (collision.CompareTag("Enemy"))
         {
             EnemyControler enemy = collision.GetComponent<EnemyControler>();
             if (enemy != null)
             {
+                Vector2 direction = new Vector2(
+                    enemy.transform.position.x - this.transform.position.x,
+                    enemy.transform.position.y - this.transform.position.y);
+
                 enemy.TakeDamage(damage);
+                enemy.ThrowBack(direction, strength);
             }
 
             Destroy(gameObject);

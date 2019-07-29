@@ -8,6 +8,7 @@ ScriptsOnlyBuild:
     - HealthPack
     - PlayerControler
     - Projectile
+    - TargetFrameRate
     - WeaponControler
     UnityEditor.Graphs.dll:
     - UnityEditor.Graphs.AnimationBlendTree.Graph
@@ -39,6 +40,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 50
       Script: {instanceID: 0}
+    - Class: 60
+      Script: {instanceID: 0}
     - Class: 61
       Script: {instanceID: 0}
     - Class: 81
@@ -48,31 +51,33 @@ ScriptsOnlyBuild:
     - Class: 104
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 9398}
+      Script: {instanceID: 9370}
     - Class: 114
-      Script: {instanceID: 9404}
+      Script: {instanceID: 9376}
     - Class: 114
-      Script: {instanceID: 9410}
+      Script: {instanceID: 9382}
     - Class: 114
-      Script: {instanceID: 9454}
+      Script: {instanceID: 9426}
     - Class: 114
-      Script: {instanceID: 9456}
+      Script: {instanceID: 9428}
     - Class: 114
-      Script: {instanceID: 9620}
+      Script: {instanceID: 9582}
     - Class: 114
-      Script: {instanceID: 9844}
+      Script: {instanceID: 9716}
     - Class: 114
-      Script: {instanceID: 9954}
+      Script: {instanceID: 9770}
     - Class: 114
-      Script: {instanceID: 10256}
+      Script: {instanceID: 9862}
     - Class: 114
-      Script: {instanceID: 10326}
+      Script: {instanceID: 10122}
     - Class: 114
-      Script: {instanceID: 10528}
+      Script: {instanceID: 10180}
     - Class: 114
-      Script: {instanceID: 10612}
+      Script: {instanceID: 10362}
     - Class: 114
-      Script: {instanceID: 13358}
+      Script: {instanceID: 10440}
+    - Class: 114
+      Script: {instanceID: 22672}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -564,6 +569,12 @@ ScriptsOnlyBuild:
     className: AnalyticsTracker
   - hash:
       serializedVersion: 2
+      Hash: 225a7f0550de56270a5eee107395e162
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: HealthPack
+  - hash:
+      serializedVersion: 2
       Hash: 0fb27be807aa299702f28ad0bcad1f46
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
@@ -600,7 +611,7 @@ ScriptsOnlyBuild:
     className: SignalTrack
   - hash:
       serializedVersion: 2
-      Hash: 939b102dc465eea4abcca18a31cab98d
+      Hash: 6293ff1f15160f3a36cb856e8dc5f1df
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Projectile
@@ -774,11 +785,11 @@ ScriptsOnlyBuild:
     className: PlayableTrack
   - hash:
       serializedVersion: 2
-      Hash: 225a7f0550de56270a5eee107395e162
+      Hash: f6720e4e3e121115ad48151e6f8c6148
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
-    className: HealthPack
+    className: TargetFrameRate
   platform: 19
   scenePathNames:
   - Assets/Scenes/SampleScene.unity
-  playerPath: C:/Users/Wojti/Desktop/Testy.exe
+  playerPath: C:/Users/wojte/Desktop/DontTouchIt/Testy.exe

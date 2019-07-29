@@ -80,14 +80,14 @@ public class EnemyControler : MonoBehaviour
             transform.position.y - player_character.transform.position.y);
 
             //Getting pushed back by and pushing back player on collision
-            ThrowBack(direction);
+            ThrowBack(direction, throwBack);
             player_character.GetComponent<PlayerControler>().ThrowBack(direction * -1);
             player_character.GetComponent<PlayerControler>().health--;
         }
     }
 
-    public void ThrowBack(Vector2 direction)
+    public void ThrowBack(Vector2 direction, float strength)
     {
-        gameObject.GetComponent<Rigidbody2D>().velocity = direction * throwBack;
+        gameObject.GetComponent<Rigidbody2D>().velocity = direction * strength;
     }
 }

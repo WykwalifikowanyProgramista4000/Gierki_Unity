@@ -48,6 +48,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 1
+  strength: 325
   bulletSpeed: 50
   lifespan: 2
   rb: {fileID: 6902977267285276278}
@@ -204,10 +205,10 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.004354626, y: -0.0017424822}
+  m_Offset: {x: 0.004354626, y: 0.0023459792}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -218,7 +219,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.2687264, y: 0.22497016}
+  m_Size: {x: 0.2687264, y: 0.21679318}
   m_EdgeRadius: 0
 --- !u!50 &6902977267285276278
 Rigidbody2D:
