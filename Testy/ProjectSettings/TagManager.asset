@@ -40,6 +40,9 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: Floor
+    uniqueID: 1276960695
+    locked: 0
   - name: Power Ups
     uniqueID: 2524889245
     locked: 0

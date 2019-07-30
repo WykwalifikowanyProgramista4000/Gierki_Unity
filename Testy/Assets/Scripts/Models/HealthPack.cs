@@ -5,6 +5,7 @@ using UnityEngine;
 public class HealthPack : MonoBehaviour
 {
     public int quantity;
+    public GameObject collectEffect;
 
     // Start is called before the first frame update
     void Start()
@@ -31,6 +32,7 @@ public class HealthPack : MonoBehaviour
             {
                 gracz.AddHealth(quantity);
 
+                Instantiate(collectEffect, transform.position, Quaternion.identity);
                 Destroy(gameObject);
             }
         }

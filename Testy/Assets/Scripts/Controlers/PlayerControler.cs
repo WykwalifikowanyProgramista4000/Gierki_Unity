@@ -6,6 +6,7 @@ public class PlayerControler : MonoBehaviour
 {
     private float speed;
     public int health = 3;
+    public int points = 0;
     public float runSpeed = 0.6f;
     public float walkSpeed = 0.3f;
     public float throwBack;
@@ -87,6 +88,11 @@ public class PlayerControler : MonoBehaviour
     public void AddHealth(int quantity)
     {
         health += quantity;
+    }
+
+    public void AddPoints(int quantity)
+    {
+        points += quantity;
     }
 
     private void Die()
